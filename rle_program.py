@@ -49,7 +49,8 @@ def hex_char_encode(char):
     elif char < 10:
         return str(char)
 
-
+# Some functions were created to pass ZyBooks Grading tests, but were unnecessary in main function 
+    
 def to_hex_string(data):
     data_len = len(data)
     data_to_hex_string = ""
