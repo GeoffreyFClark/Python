@@ -209,7 +209,7 @@ def main():
             flat_hex_string = rle_string_to_hex_flat_data(rle_string)
             print(f"Flat hex values: {flat_hex_string}")
         else:
-            pass
+            print("Please choose an option from 0 through 9.")
 
 
 if __name__ == '__main__':
