@@ -60,7 +60,7 @@ def to_hex_string(data):
     return data_to_hex_string
 
 
-def count_runs(flat_data):
+def count_runs(flat_data): 
     tempvalue = flat_data[0]
     runs = 1
     repetitions = 0
@@ -172,6 +172,7 @@ def string_to_rle(rle_string):
     return rle_data
 
 
+# Some functions made to pass ZyBooks grading criteria, but unused in option menu
 def main():
     print("Welcome to the RLE image encoder!\n")
     print("Displaying Spectrum Image:")
