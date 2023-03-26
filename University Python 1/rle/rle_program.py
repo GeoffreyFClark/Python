@@ -172,7 +172,8 @@ def string_to_rle(rle_string):
     return rle_data
 
 
-# Some functions made to pass ZyBooks grading criteria, but unused in option menu
+# Some extra functions were made just to pass ZyBooks grading criteria
+# and were unnecessary in the following option menu.
 def main():
     print("Welcome to the RLE image encoder!\n")
     print("Displaying Spectrum Image:")
