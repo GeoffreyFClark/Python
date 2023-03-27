@@ -2,6 +2,7 @@ import sys
 from heifer_generator import HeiferGenerator
 from cow import Cow
 
+# TODO: Add dragon and ice-dragon classes
 
 def main():
     cow_objects = HeiferGenerator.get_cows()
