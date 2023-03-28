@@ -1,8 +1,9 @@
 import sys
 from heifer_generator import HeiferGenerator
-from cow import Cow
+from cow import * 
+from dragon import *
+from ice_dragon import *
 
-# TODO: Add dragon and ice-dragon classes
 
 def main():
     cow_objects = HeiferGenerator.get_cows()
@@ -11,14 +12,21 @@ def main():
         print(f"Cows available: {' '.join(cow_names)}")
     elif len(sys.argv) > 3 and sys.argv[1] == '-n':
         cow_name = sys.argv[2]
-        cow_image = next((cow.get_image() for cow in cow_objects if cow.get_name() == cow_name), None)
-        if cow_image is not None:
+        cow_object = next((cow for cow in cow_objects if cow.get_name() == cow_name), None)
+        if isinstance(cow_object, Dragon) and not isinstance(cow_object, IceDragon):
+            print(' '.join(sys.argv[3:]))
+            print(cow_object.get_image())
+            print("This dragon can breathe fire.")
+        elif isinstance(cow_object, IceDragon):
+            print(' '.join(sys.argv[3:]))
+            print(cow_object.get_image())
+            print("This dragon cannot breathe fire.")
+        elif cow_object is not None:
             cow_message = ' '.join(sys.argv[3:])
             print(cow_message)
-            print(cow_image)
+            print(cow_object.get_image())
         else:
             print(f"Could not find {cow_name} cow!")
-
     else:
         cow_message = ' '.join(sys.argv[1:])
         print(cow_message)
