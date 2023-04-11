@@ -75,14 +75,13 @@ def main():
         max_capacity = input("Enter max capacity of the Pakudex: ")
         try:
             max_capacity = int(max_capacity)
+            if max_capacity > 0:
+                pakudex_object = pakudex_module.Pakudex(max_capacity)
+                break
         except:
-            print("Please enter a valid size.")
-            continue
-        if isinstance(max_capacity, int) and max_capacity > 0:
-            pakudex_object = pakudex_module.Pakudex(max_capacity)
-            break
-        else:
-            print("Please enter a valid size.")
+            pass
+        print("Please enter a valid size.")
+
 
     a = True
     while a is not False:
