@@ -31,7 +31,6 @@ def main():
             print(cow_object.get_image())
         else:
             print(f"Could not find {cow_name} cow!")
-
     elif len(sys.argv) > 3 and sys.argv[1] == '-f':
         filecow_name = sys.argv[2]
         filecow_object = next((filecow for filecow in filecow_objects if filecow.get_name() == filecow_name), None)
@@ -49,7 +48,6 @@ def main():
             print(filecow_object.get_image())
         else:
             print(f"Could not find {filecow_name} cow!")
-
     else:
         cow_message = ' '.join(sys.argv[1:])
         print(cow_message)
