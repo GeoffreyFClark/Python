@@ -1,6 +1,8 @@
 from cow import Cow
 from dragon import Dragon
 from ice_dragon import IceDragon
+from file_cow import FileCow
+import os
 
 class HeiferGenerator:
 
@@ -43,8 +45,8 @@ class HeiferGenerator:
 					"              ///-._ _ _ _ _ _ _}^ - - - - ~                   `-----'\n"
 
 	cows = None
+	file_cows = None
 
-	@staticmethod
 	def get_cows():
 		if HeiferGenerator.cows is None:
 			HeiferGenerator.cows = [None]*(len(HeiferGenerator.cow_names) + len(HeiferGenerator.dragon_names))
@@ -62,3 +64,16 @@ class HeiferGenerator:
 				)
 			
 		return HeiferGenerator.cows
+	
+	def filter(filename):
+		return filename.endswith('.cow')
+
+	def get_file_cows():
+		if HeiferGenerator.file_cows is None:
+			HeiferGenerator.file_cows = []
+			for filename in os.listdir('./cows'):		
+				if HeiferGenerator.filter(filename):
+					c = FileCow(filename[0:-4], filename)
+					HeiferGenerator.file_cows.append(c)
+
+		return HeiferGenerator.file_cows
