@@ -12,9 +12,9 @@ class FileCow(Cow):
             with open(("./cows/" + filename), "r") as file:
                 filecontents = file.read()
             self.set_image(filecontents)    
-        # My solution for Zybooks since the above 4 lines of code don't work with their automated test
-        #     if filename == 'tux.cow':
-        #         filecontents = r"""
+#         A solution for Zybooks since the above 4 lines don't work with their automated test
+#             if filename == 'tux.cow':
+#                 filecontents = r"""
 #     .--.
 #    |o_o |
 #    |:_/ |
@@ -22,4 +22,11 @@ class FileCow(Cow):
 #  (|     | )
 # /'\_   _/`\
 # \___)=(___/"""
-#     self.image = filecontents
+#                 self.image = filecontents
+
+# Realized that ZyBooks just had their .cow files sitting outside a ./cows/ subfolder
+# so the following 4 files work as well
+#         if os.path.isfile(filename):   
+#             with open((filename), "r") as file:
+#                 filecontents = file.read()
+#             self.set_image(filecontents)  

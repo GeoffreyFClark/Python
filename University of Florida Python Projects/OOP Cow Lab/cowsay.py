@@ -1,7 +1,7 @@
 import sys
 from heifer_generator import HeiferGenerator
-from cow import * 
-from file_cow import *
+from cow import Cow
+from file_cow import FileCow
 from dragon import *
 from ice_dragon import *
 
