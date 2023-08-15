@@ -1,0 +1,3 @@
+[submodule "sudoku"]
+	path = sudoku
+	url = https://github.com/GeoffreyFClark/sudoku
